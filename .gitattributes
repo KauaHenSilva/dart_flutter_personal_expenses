@@ -8,3 +8,5 @@
 *.txt linguist-detectable=false
 *.cmake linguist-detectable=false
 *.html linguist-detectable=false
+
+/build/** linguist-detectable=false

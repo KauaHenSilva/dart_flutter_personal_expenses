@@ -1,5 +1,6 @@
 import 'package:dart_flutter_despesas_pessoais/models/transactions_list.dart';
 import 'package:dart_flutter_despesas_pessoais/models/transactions_model.dart';
+import 'package:dart_flutter_despesas_pessoais/utils/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -28,6 +29,7 @@ class _TransactionsFormState extends State<TransactionsForm> {
       final amount = _formKey.currentState?.fields['amount']?.value;
 
       final newTransaction = TransactionsModel(
+        id: DateTime.now().toString(),
         title: title,
         date: date,
         amount: amount,
@@ -62,7 +64,6 @@ class _TransactionsFormState extends State<TransactionsForm> {
               FormBuilderDateTimePicker(
                 name: 'date',
                 decoration: const InputDecoration(labelText: 'Date'),
-                inputType: InputType.date,
                 firstDate: DateTime(1900),
                 lastDate: DateTime.now(),
                 validator: FormBuilderValidators.compose([
@@ -92,6 +93,7 @@ class _TransactionsFormState extends State<TransactionsForm> {
               ElevatedButton(
                 onPressed: () {
                   addTransaction();
+                  debugPrint(MyConst().urlTransactions);
                 },
                 child: const Text('Submit'),
               ),

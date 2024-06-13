@@ -43,6 +43,7 @@ dependencies:
   form_builder_validators: ^10.0.1
   flutter_localization: ^0.2.0
   flutter_masked_text2: ^0.9.1
+  http: ^1.2.1
 
 
 dev_dependencies:

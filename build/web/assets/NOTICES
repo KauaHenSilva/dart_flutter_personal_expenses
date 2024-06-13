@@ -9107,6 +9107,8 @@ freely, subject to the following restrictions:
    distribution.
 --------------------------------------------------------------------------------
 glob
+http
+http_parser
 matcher
 path
 pool

@@ -37,7 +37,9 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [
-          IconButton(icon: const Icon(Icons.bar_chart), onPressed: () {}),
+          IconButton(icon: const Icon(Icons.bar_chart), onPressed: () {
+            Navigator.of(context).pushNamed(MyRoutes.graphic);
+          }),
         ],
       ),
       body: Consumer<TransactionsList>(
@@ -71,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                         return ListTile(
                           title: Text(transaction.title),
                           subtitle: Text(transaction.date.toString()),
-                          trailing: Text(transaction.amount),
+                          trailing: Text(transaction.amount.toString()),
                         );
                       },
                     );

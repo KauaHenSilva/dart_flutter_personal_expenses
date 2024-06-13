@@ -8,14 +8,12 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => TransactionsList(),
-        )
+        ChangeNotifierProvider(create: (context) => TransactionsList()),
+        
       ],
       child: const MyApp(),
     ),

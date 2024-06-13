@@ -2,7 +2,7 @@
 
 ### 🎓 Running App (Web)
 
-> Link: [Flutter Dart Personal Expenses Web App](https://dart-flutter-personal-expenses.vercel.app/)
+> Link: [Flutter Dart Personal Expenses Web App](https://dart-flutter-despesas-pessoais.vercel.app/)
 
 > ⚠️ **Note:** This app was developed for mobile devices, some fonts may not be displayed correctly in other environments.
 

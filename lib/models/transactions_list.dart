@@ -45,4 +45,15 @@ class TransactionsList extends ChangeNotifier {
     notifyListeners();
     return Future.value();
   }
+
+  List<double> get getWeeklyAmounts {
+    List<double> weeklyAmounts = List<double>.filled(7, 0.0);
+
+    for (var transaction in _transactions) {
+      final dayOfWeek = transaction.date.weekday - 1;
+      weeklyAmounts[dayOfWeek] += transaction.amount;
+    }
+
+    return weeklyAmounts;
+  }
 }

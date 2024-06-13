@@ -1,6 +1,5 @@
 import 'package:dart_flutter_despesas_pessoais/models/transactions_list.dart';
 import 'package:dart_flutter_despesas_pessoais/models/transactions_model.dart';
-import 'package:dart_flutter_despesas_pessoais/utils/my_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -26,7 +25,8 @@ class _TransactionsFormState extends State<TransactionsForm> {
     if (_formKey.currentState?.saveAndValidate() ?? false) {
       final title = _formKey.currentState?.fields['title']?.value;
       final date = _formKey.currentState?.fields['date']?.value;
-      final amount = _formKey.currentState?.fields['amount']?.value;
+      final tmp = _amountController.text.replaceAll(RegExp(r'[R$,.]'), '');
+      final amount = double.parse(tmp) / 100;
 
       final newTransaction = TransactionsModel(
         id: DateTime.now().toString(),
@@ -93,7 +93,6 @@ class _TransactionsFormState extends State<TransactionsForm> {
               ElevatedButton(
                 onPressed: () {
                   addTransaction();
-                  debugPrint(MyConst().urlTransactions);
                 },
                 child: const Text('Submit'),
               ),

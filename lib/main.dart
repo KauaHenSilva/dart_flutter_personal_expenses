@@ -1,4 +1,5 @@
 import 'package:dart_flutter_despesas_pessoais/models/transactions_list.dart';
+import 'package:dart_flutter_despesas_pessoais/screens/graphic_page.dart';
 import 'package:dart_flutter_despesas_pessoais/screens/home_page.dart';
 import 'package:dart_flutter_despesas_pessoais/screens/transactions_form.dart';
 import 'package:dart_flutter_despesas_pessoais/utils/my_routes.dart';
@@ -13,7 +14,6 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => TransactionsList()),
-        
       ],
       child: const MyApp(),
     ),
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.home: (context) => const HomePage(),
         MyRoutes.addTransaction: (context) => const TransactionsForm(),
+        MyRoutes.graphic: (context) => const GraphicPage(),
       },
     );
   }

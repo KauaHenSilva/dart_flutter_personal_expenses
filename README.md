@@ -1,18 +1,18 @@
-# DartFlutter_DespesasPessoais
+# DartFlutter_PersonalExpenses
 
-### 🎓 App em Execução (Web)
+### 🎓 Running App (Web)
 
-> Link: [Flutter Dart Despesas Pessoias App Web](https://dart-flutter-despesas-pessoais.vercel.app/)
+> Link: [Flutter Dart Personal Expenses Web App](https://dart-flutter-personal-expenses.vercel.app/)
 
-> ⚠️ **Nota:** Este aplicativo foi desenvolvido para dispositivos móveis, algumas fontes podem não ser exibidas corretamente em outros ambientes.
+> ⚠️ **Note:** This app was developed for mobile devices, some fonts may not be displayed correctly in other environments.
 
-### 🚀 Iniciativa do Projeto
+### 🚀 Project Initiative
 
-Um projeto desenvolvido em Flutter e Dart para demonstração de conhecimento.
+A project developed in Flutter and Dart to demonstrate knowledge.
 
-### 📋 Pré-requisitos para execução
+### 📋 Prerequisites for Execution
 
-Certifique-se de ter o Flutter e o Dart instalados. Se não tiver, siga as instruções em [flutter.dev](https://flutter.dev/docs/get-started/install) ou [youtubeTuturial](https://www.youtube.com/watch?v=7Kpd6eprz4k) para a instalação.
+Make sure you have Flutter and Dart installed. If you don't, follow the instructions at [flutter.dev](https://flutter.dev/docs/get-started/install) or [youtubeTutorial](https://www.youtube.com/watch?v=7Kpd6eprz4k) for installation.
 
 Flutter --version:
 
@@ -23,31 +23,31 @@ Flutter --version:
   Tools • Dart 3.2.3 • DevTools 2.28.4
   ```
 
-Tenha um ambiente de trabalho como o [Visual Estudio Code](https://code.visualstudio.com/).
+Have a working environment like [Visual Studio Code](https://code.visualstudio.com/).
 
-Dentro desse abiente (vscode) instale as exetenções [Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) e [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
+Within this environment (vscode), install the extensions [Dart](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code) and [Flutter](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter).
 
-### 🔧 Implantação
+### 🔧 Deployment
 
-1. **Clone este repositório:**
-
-    ```bash
-    git clone https://github.com/KauaHenSilva/DartFlutter_DespesasPessoias.git
-    ```
-
-2. **Navegue até o diretório do projeto:**
+1. **Clone this repository:**
 
     ```bash
-    cd DartFlutter_DespesasPessoias
+    git clone https://github.com/KauaHenSilva/DartFlutter_PersonalExpenses.git
     ```
 
-3. **Obtenha as dependências:**
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd DartFlutter_PersonalExpenses
+    ```
+
+3. **Get the dependencies:**
 
     ```
     flutter pub get
     ```
-    
-4. **Construa a Aplicação:**
+
+4. **Build the Application:**
 
     ```
     flutter build
@@ -55,20 +55,19 @@ Dentro desse abiente (vscode) instale as exetenções [Dart](https://marketplace
 
 ### Usage
 
-Agora o projeto está configurado. Você pode executá-lo com o seguinte comando:
+Now the project is set up. You can run it with the following command:
 
     flutter run
 
-Ao Observar a tela:
+When prompted on the screen:
 
   ```
-    [1]: 'Despositivo' (Android)
-    [2]: 'Despositivo' (ios)
+    [1]: 'Device' (Android)
+    [2]: 'Device' (ios)
     [3]: Windows (windows)
     [4]: Linux (linux)
     [5]: Chrome (chrome)
     [6]: Edge (edge)
   ```
 
-Pressione a melhor opção para o seu caso.
-
+Press the best option for your case.

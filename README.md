@@ -50,7 +50,7 @@ Within this environment (vscode), install the extensions [Dart](https://marketpl
 4. **Build the Application:**
 
     ```
-    flutter build
+    flutter build $deviceType --verbose --dart-define=URL_BASE=$FireBaseWeb
     ```
 
 ### Usage

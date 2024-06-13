@@ -38,6 +38,11 @@ dependencies:
   flutter_native_splash: ^2.2.19
   flutter_launcher_icons: "^0.13.1"
   build_web_compilers: ^4.0.4
+  provider: ^6.1.2
+  flutter_form_builder: ^9.3.0
+  form_builder_validators: ^10.0.1
+  flutter_localization: ^0.2.0
+  flutter_masked_text2: ^0.9.1
 
 
 dev_dependencies:

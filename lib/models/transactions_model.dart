@@ -2,7 +2,7 @@ class TransactionsModel {
   final String id;
   final String title;
   final DateTime date;
-  final String amount;
+  final double amount;
 
   TransactionsModel({
     required this.id,

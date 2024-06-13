@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                     final transaction = transactionsList.transactions[index];
                     return ListTile(
                       title: Text(transaction.title),
-                      subtitle: Text(transaction.date),
+                      subtitle: Text(transaction.date.toString()),
                       trailing: Text(transaction.amount),
                     );
                   },

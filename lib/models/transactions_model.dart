@@ -1,6 +1,6 @@
 class TransactionsModel {
   final String title;
-  final String date;
+  final DateTime date;
   final String amount;
 
   TransactionsModel({

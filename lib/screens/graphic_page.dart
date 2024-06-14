@@ -54,7 +54,12 @@ class GraphicPage extends StatelessWidget {
                                   ),
                                 ),
                                 Container(
-                                  height: constraints.maxHeight,
+                                  height: constraints.maxHeight *
+                                      transactionList.getWeeklyAmounts[index] /
+                                      transactionList.getWeeklyAmounts.reduce(
+                                          (value, element) => value > element
+                                              ? value
+                                              : element),
                                   decoration: BoxDecoration(
                                     color: Colors.deepPurple,
                                     border:

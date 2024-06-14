@@ -10,9 +10,6 @@ class TransactionsList extends ChangeNotifier {
   List<TransactionsModel> get transactions => [..._transactions];
 
   Future<void> addTransaction(TransactionsModel transaction) async {
-    _transactions.add(transaction);
-    notifyListeners();
-
     final res = await http.post(
       Uri.parse('${MyConst().urlTransactions}.json'),
       body: jsonEncode({
@@ -22,10 +19,35 @@ class TransactionsList extends ChangeNotifier {
       }),
     );
 
-    if (res.statusCode >= 400) {
-      _transactions.remove(transaction);
+    if (res.statusCode >= 400) throw Exception('Error on request');
+
+    TransactionsModel newTransaction = TransactionsModel(
+      id: jsonDecode(res.body)['name'],
+      title: transaction.title,
+      date: transaction.date,
+      amount: transaction.amount,
+    );
+
+    _transactions.add(newTransaction);
+    notifyListeners();
+    return Future.value();
+  }
+
+  Future<void> removeTransaction(String id) async {
+    final index = _transactions.indexWhere((element) => element.id == id);
+    if (index >= 0) {
+      final transaction = _transactions[index];
+      _transactions.removeAt(index);
       notifyListeners();
-      throw Exception('Error on request');
+
+      final res =
+          await http.delete(Uri.parse('${MyConst().urlTransactions}/$id.json'));
+
+      if (res.statusCode >= 400) {
+        _transactions.insert(index, transaction);
+        notifyListeners();
+        throw Exception('Error on request');
+      }
     }
   }
 

@@ -37,9 +37,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Home Page'),
         actions: [
-          IconButton(icon: const Icon(Icons.bar_chart), onPressed: () {
-            Navigator.of(context).pushNamed(MyRoutes.graphic);
-          }),
+          IconButton(
+              icon: const Icon(Icons.bar_chart),
+              onPressed: () {
+                Navigator.of(context).pushNamed(MyRoutes.graphic);
+              }),
         ],
       ),
       body: Consumer<TransactionsList>(
@@ -71,9 +73,24 @@ class _HomePageState extends State<HomePage> {
                         final transaction =
                             transactionsList.transactions[index];
                         return ListTile(
+                          leading: CircleAvatar(
+                            radius: 40,
+                            backgroundColor: Colors.purple,
+                            child: Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: FittedBox(
+                                child: Text("R\$ ${transaction.amount.toString()}"),
+                              ),
+                            ),
+                          ),
                           title: Text(transaction.title),
                           subtitle: Text(transaction.date.toString()),
-                          trailing: Text(transaction.amount.toString()),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.delete),
+                            onPressed: () {
+                              transactionsList.removeTransaction(transaction.id);
+                            },
+                          )
                         );
                       },
                     );

@@ -44,7 +44,6 @@ dependencies:
   flutter_localization: ^0.2.0
   flutter_masked_text2: ^0.9.1
   http: ^1.2.1
-  fl_chart: ^0.68.0
 
 
 dev_dependencies:

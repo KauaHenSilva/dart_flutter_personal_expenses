@@ -72,25 +72,45 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (context, index) {
                         final transaction =
                             transactionsList.transactions[index];
-                        return ListTile(
-                          leading: CircleAvatar(
-                            radius: 40,
-                            backgroundColor: Colors.purple,
-                            child: Padding(
-                              padding: const EdgeInsets.all(15),
-                              child: FittedBox(
-                                child: Text("R\$ ${transaction.amount.toString()}"),
+                        return Card(
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 15,
+                                ),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.purple,
+                                  ),
+                                ),
+                                padding: const EdgeInsets.all(10),
+                                child: Text(
+                                  'R\$${transaction.amount.toStringAsFixed(2)}',
+                                  style: const TextStyle(
+                                    color: Colors.purple,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(transaction.title),
+                                  Text(transaction.date.toString()),
+                                ],
+                              ),
+                              const Spacer(),
+                              IconButton(
+                                icon: const Icon(Icons.delete),
+                                onPressed: () {
+                                  transactionsList
+                                      .removeTransaction(transaction.id);
+                                },
+                              ),
+                              const SizedBox(width: 10),
+                            ],
                           ),
-                          title: Text(transaction.title),
-                          subtitle: Text(transaction.date.toString()),
-                          trailing: IconButton(
-                            icon: const Icon(Icons.delete),
-                            onPressed: () {
-                              transactionsList.removeTransaction(transaction.id);
-                            },
-                          )
                         );
                       },
                     );
